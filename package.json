@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "start": "node .next/standalone/server.js"
+    "start": "next start"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.3.1",
