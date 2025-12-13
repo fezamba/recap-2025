@@ -118,7 +118,7 @@ export default function Step2Page() {
     <div className="py-8">
       <WizardHeader
         title="Formulário"
-        subtitle={`Responda com calma. (${totalQuestions} perguntas) — autosave local ativado.`}
+        subtitle={`Responda com calma. (${totalQuestions} perguntas).`}
       />
 
       {hasDraft ? <DraftBanner onContinue={loadDraft} onDiscard={discardDraft} /> : null}
@@ -148,7 +148,7 @@ export default function Step2Page() {
       </button>
 
       <p className="mt-2 text-xs text-zinc-500">
-        Pode levar alguns segundos (PDF caprichado com timeout de ~20s).
+        Pode levar alguns segundos.
       </p>
     </div>
   );
