@@ -1,32 +1,27 @@
-import puppeteer from "puppeteer";
+import puppeteer from "puppeteer-core";
 
-export async function generatePdfBuffer(params: {
+export async function generatePdfBuffer({
+  html,
+  timeoutMs = 20_000,
+}: {
   html: string;
   timeoutMs?: number;
 }): Promise<Buffer> {
-  const { html, timeoutMs = 20_000 } = params;
-
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
   });
 
   try {
     const page = await browser.newPage();
-
-    // Soft timeout guard: race PDF generation against a timer.
-    const timer = new Promise<never>((_, reject) =>
-      setTimeout(() => reject(new Error(`PDF generation timed out after ${timeoutMs}ms`)), timeoutMs)
-    );
-
     await page.setContent(html, { waitUntil: "networkidle0" });
 
-    const pdfPromise = page.pdf({
+    const pdf = await page.pdf({
       format: "A4",
       printBackground: true,
     });
 
-    const pdf = await Promise.race([pdfPromise, timer]);
-    return Buffer.from(pdf as Uint8Array);
+    return Buffer.from(pdf);
   } finally {
     await browser.close();
   }
