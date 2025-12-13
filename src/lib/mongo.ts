@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
+import { env } from "@/lib/env";
 
-const uri = process.env.MONGO_URL;
-if (!uri) throw new Error("Missing env MONGO_URL");
+const uri = env("MONGO_URL");
 
 let client: MongoClient | null = null;
 
