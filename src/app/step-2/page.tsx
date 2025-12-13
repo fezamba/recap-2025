@@ -96,19 +96,25 @@ export default function Step2Page() {
         body: JSON.stringify({ email, confirmEmail: email, answers }),
       });
 
-      if (!resp.ok) {
-        const data = await resp.json().catch(() => null);
-        const msg =
-          data?.error?.message ||
-          data?.error ||
-          "Falha ao enviar. Tente novamente.";
-        throw new Error(typeof msg === "string" ? msg : "Falha ao enviar.");
-      }
+    if (!resp.ok) {
+      const data = await resp.json().catch(() => null);
+
+      const msg =
+        typeof data?.error === "string"
+          ? data.error
+          : typeof data?.error?.message === "string"
+          ? data.error.message
+          : data
+          ? JSON.stringify(data)
+          : "Falha ao enviar. Tente novamente.";
+
+      throw new Error(msg);
+    }
 
       localStorage.removeItem(getDraftKey(email));
       router.push("/success");
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Falha ao enviar. Tente novamente.");
+      alert(err instanceof Error ? err.message : String(err));
     } finally {
       setSubmitting(false);
     }

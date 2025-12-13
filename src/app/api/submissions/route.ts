@@ -19,7 +19,7 @@ export async function POST(req: Request) {
 
     if (!parsed.success) {
       return NextResponse.json(
-        { error: parsed.error.flatten() },
+        { error: "Dados inválidos. Verifique os campos e tente novamente.", details: parsed.error.flatten() },
         { status: 400 }
       );
     }
