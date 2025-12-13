@@ -9,7 +9,6 @@ export async function generatePdfBuffer({
 }): Promise<Buffer> {
   const browser = await puppeteer.launch({
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
   });
 
   try {
