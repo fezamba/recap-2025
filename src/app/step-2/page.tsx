@@ -126,7 +126,7 @@ export default function Step2Page() {
 
   return (
     <div className="py-8">
-      <WizardHeader
+      {/* <WizardHeader
         title="Formulário"
         subtitle={`Responda com calma. (${totalQuestions} perguntas).`}
       />
@@ -136,7 +136,7 @@ export default function Step2Page() {
       <div className="mb-4 flex items-center justify-between">
         <div className="text-xs text-zinc-600">E-mail: {email}</div>
         <SaveIndicator state={saveState} />
-      </div>
+      </div>  
 
       <div className="flex flex-col gap-4">
         {formSchema.map((section) => (
@@ -147,7 +147,7 @@ export default function Step2Page() {
             onSetAnswer={onSetAnswer}
           />
         ))}
-      </div>
+      </div> */}
 
       <button
         onClick={onSubmit}
