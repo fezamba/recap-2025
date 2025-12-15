@@ -53,9 +53,6 @@ export function RetrospectivaPdf({ email, answers }: Props) {
     <Document>
       <Page size="A4" style={styles.page}>
         <Text style={styles.title}>Retrospectiva 2025 / Visão 2026</Text>
-        <Text style={styles.subtitle}>
-          Pergunta + resposta (literal) — {email} — {date}
-        </Text>
 
         {formSchema.map((section) => (
           <View key={section.id} style={styles.section}>
@@ -73,7 +70,7 @@ export function RetrospectivaPdf({ email, answers }: Props) {
         ))}
 
         <Text style={styles.footer}>
-          Documento gerado automaticamente.
+          Documento gerado em {date}.
         </Text>
       </Page>
     </Document>
