@@ -85,42 +85,6 @@ export const formSchema: Section[] = [
     ],
   },
   {
-    id: "realizacoes_desafios",
-    title: "Realizações e Desafios",
-    description: "Uma visão ampliada em formato de tabela para facilitar:",
-    questions: [
-      { id: "realizacoes_desafios.pessoal.melhor_realizacao_2025", label: "Pessoal — Melhor Realização", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.pessoal.maior_desafio_2025", label: "Pessoal — Maior Desafio", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.pessoal.o_que_aprendi_2025", label: "Pessoal — O que aprendi", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.pessoal.o_que_quero_mudar_2026", label: "Pessoal — O que quero mudar em 2026", type: "textarea", rows: 3 },
-
-      { id: "realizacoes_desafios.saude.melhor_realizacao_2025", label: "Saúde — Melhor Realização", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.saude.maior_desafio_2025", label: "Saúde — Maior Desafio", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.saude.o_que_aprendi_2025", label: "Saúde — O que aprendi", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.saude.o_que_quero_mudar_2026", label: "Saúde — O que quero mudar em 2026", type: "textarea", rows: 3 },
-
-      { id: "realizacoes_desafios.criatividade.melhor_realizacao_2025", label: "Criatividade — Melhor Realização", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.criatividade.maior_desafio_2025", label: "Criatividade — Maior Desafio", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.criatividade.o_que_aprendi_2025", label: "Criatividade — O que aprendi", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.criatividade.o_que_quero_mudar_2026", label: "Criatividade — O que quero mudar em 2026", type: "textarea", rows: 3 },
-
-      { id: "realizacoes_desafios.espiritualidade.melhor_realizacao_2025", label: "Espiritualidade — Melhor Realização", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.espiritualidade.maior_desafio_2025", label: "Espiritualidade — Maior Desafio", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.espiritualidade.o_que_aprendi_2025", label: "Espiritualidade — O que aprendi", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.espiritualidade.o_que_quero_mudar_2026", label: "Espiritualidade — O que quero mudar em 2026", type: "textarea", rows: 3 },
-
-      { id: "realizacoes_desafios.relacoes.melhor_realizacao_2025", label: "Relações — Melhor Realização", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.relacoes.maior_desafio_2025", label: "Relações — Maior Desafio", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.relacoes.o_que_aprendi_2025", label: "Relações — O que aprendi", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.relacoes.o_que_quero_mudar_2026", label: "Relações — O que quero mudar em 2026", type: "textarea", rows: 3 },
-
-      { id: "realizacoes_desafios.profissional.melhor_realizacao_2025", label: "Profissional — Melhor Realização", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.profissional.maior_desafio_2025", label: "Profissional — Maior Desafio", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.profissional.o_que_aprendi_2025", label: "Profissional — O que aprendi", type: "textarea", rows: 3 },
-      { id: "realizacoes_desafios.profissional.o_que_quero_mudar_2026", label: "Profissional — O que quero mudar em 2026", type: "textarea", rows: 3 },
-    ],
-  },
-  {
     id: "visao_2026",
     title: "Visão para 2026",
     questions: [
