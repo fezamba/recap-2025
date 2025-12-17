@@ -152,9 +152,11 @@ export default function Step2Page() {
       <button
         onClick={onSubmit}
         disabled={submitting}
-        className="mt-6 w-full rounded-lg bg-zinc-900 px-4 py-3 text-sm font-medium text-white disabled:opacity-50"
+        className="mt-8 w-full rounded-2xl bg-zinc-900 px-6 py-4 text-sm font-bold text-white 
+                  shadow-lg shadow-zinc-900/20 transition-all 
+                  hover:bg-zinc-800 hover:shadow-xl active:scale-[0.98] disabled:opacity-50"
       >
-        {submitting ? "Gerando PDF e enviando…" : "Finalizar e receber por e-mail"}
+        {submitting ? "Gerando seu registro..." : "Finalizar e Receber por E-mail"}
       </button>
 
       <p className="mt-2 text-xs text-zinc-500">

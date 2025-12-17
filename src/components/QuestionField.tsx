@@ -7,13 +7,19 @@ export function QuestionField(props: {
 }) {
   const q = props.question;
   return (
-    <div className="rounded-xl border border-zinc-200 p-4">
-      <label className="block text-sm font-medium">{q.label}</label>
+    <div className="group flex flex-col gap-2">
+      <label className="text-sm font-semibold text-zinc-700 group-focus-within:text-zinc-900 transition-colors">
+        {q.label}
+      </label>
       <textarea
-        className="mt-2 w-full resize-y rounded-lg border border-zinc-200 p-3 text-sm outline-none focus:ring-2 focus:ring-zinc-900"
+        className="w-full resize-none rounded-2xl border border-zinc-200 bg-white p-4 text-base 
+                   shadow-sm ring-zinc-900/5 transition-all
+                   placeholder:text-zinc-400
+                   focus:border-zinc-900 focus:ring-4 focus:ring-zinc-900/5 outline-none"
         rows={q.rows ?? 4}
         value={props.value}
         onChange={(e) => props.onChange(e.target.value)}
+        placeholder="Escreva seus pensamentos aqui..."
       />
     </div>
   );
