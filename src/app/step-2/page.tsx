@@ -124,44 +124,49 @@ export default function Step2Page() {
     }
   }
 
-  return (
-    <div className="py-8">
-      <WizardHeader
-        title="Formulário"
-        subtitle={`Responda com calma. (${totalQuestions} perguntas).`}
-      />
+return (
+  <div className="py-10 flex flex-col gap-8">
+    <WizardHeader
+      title="Sua Jornada"
+      subtitle={`Reflita com calma sobre cada área. (${totalQuestions} perguntas).`}
+    />
 
-      {hasDraft ? <DraftBanner onContinue={loadDraft} onDiscard={discardDraft} /> : null}
+    {hasDraft ? <DraftBanner onContinue={loadDraft} onDiscard={discardDraft} /> : null}
 
-      <div className="mb-4 flex items-center justify-between">
-        <div className="text-xs text-zinc-600">E-mail: {email}</div>
-        <SaveIndicator state={saveState} />
+    <div className="flex items-center justify-between bg-white/50 backdrop-blur-sm p-3 rounded-2xl border border-slate-200 shadow-sm">
+      <div className="text-xs font-medium text-slate-500 flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
+        Logado como: <span className="text-slate-900">{email}</span>
       </div>
+      <SaveIndicator state={saveState} />
+    </div>
 
-      <div className="flex flex-col gap-4">
-        {formSchema.map((section) => (
-          <SectionAccordion
-            key={section.id}
-            section={section}
-            answers={answers}
-            onSetAnswer={onSetAnswer}
-          />
-        ))}
-      </div>
+    <div className="flex flex-col gap-5">
+      {formSchema.map((section) => (
+        <SectionAccordion
+          key={section.id}
+          section={section}
+          answers={answers}
+          onSetAnswer={onSetAnswer}
+        />
+      ))}
+    </div>
 
+    <div className="flex flex-col gap-4 mt-4">
       <button
         onClick={onSubmit}
         disabled={submitting}
-        className="mt-8 w-full rounded-2xl bg-zinc-900 px-6 py-4 text-sm font-bold text-white 
-                  shadow-lg shadow-zinc-900/20 transition-all 
-                  hover:bg-zinc-800 hover:shadow-xl active:scale-[0.98] disabled:opacity-50"
+        className="w-full rounded-full bg-indigo-600 px-6 py-4 text-base font-bold text-white 
+                   shadow-lg shadow-indigo-200 transition-all 
+                   hover:bg-indigo-700 active:scale-95 disabled:opacity-50"
       >
-        {submitting ? "Gerando seu registro..." : "Finalizar e Receber por E-mail"}
+        {submitting ? "Criando seu PDF..." : "Finalizar e Receber por E-mail"}
       </button>
-
-      <p className="mt-2 text-xs text-zinc-500">
-        Pode levar alguns segundos.
+      
+      <p className="text-center text-xs text-slate-400 font-medium">
+        Seu documento será gerado e enviado em alguns instantes.
       </p>
     </div>
-  );
+  </div>
+);
 }
