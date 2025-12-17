@@ -6,9 +6,9 @@
 
 body { 
   @apply bg-zinc-50 text-zinc-900 antialiased;
-  background: radial-gradient(circle at top right, #f4f4f5, #ffffff);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
 .container { 
-  @apply mx-auto max-w-2xl px-6 py-12; 
+  @apply mx-auto max-w-md px-6;
 }
