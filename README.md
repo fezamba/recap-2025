@@ -1,4 +1,4 @@
-#recap-2025
+# recap-2025
 
 Aplicação web para criar e compartilhar uma **retrospectiva personalizada de 2025**, focada em uma experiência simples, rápida e visual.  
 O projeto permite ao usuário revisar momentos do ano em um fluxo guiado, com interface moderna e responsiva.
